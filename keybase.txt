@@ -1,0 +1,54 @@
+==================================================================
+https://keybase.io/sonereker
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://www.sonereker.com
+  * I am sonereker (https://keybase.io/sonereker) on keybase.
+  * I have a public key ASD9-DiVUpi9EadpFAFUD4vqBCxstGJXdc2pSrBGqjPdXQo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0120fdf838955298bd11a7691401540f8bea042c6cb4625775cda94ab046aa33dd5d0a",
+            "host": "keybase.io",
+            "kid": "0120fdf838955298bd11a7691401540f8bea042c6cb4625775cda94ab046aa33dd5d0a",
+            "uid": "b4ca49ce546ffeb78c3471481f2a9c19",
+            "username": "sonereker"
+        },
+        "service": {
+            "hostname": "www.sonereker.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.18"
+    },
+    "ctime": 1482476577,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1482476444,
+        "hash": "43a248a96b82f00cc254ef19d97e8845901f8c9dec09fd26b92d5a763ca2f79d7d7178104d134ed8aa34ea8b86190bca7f7f4c853da33b2c49f68ab92e5de97e",
+        "seqno": 772577
+    },
+    "prev": "1332591dfb756a05ad0acb3bbc564d78f818280414c418d6c76b7fc1e3158611",
+    "seqno": 6,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg/fg4lVKYvRGnaRQBVA+L6gQsbLRiV3XNqUqwRqoz3V0Kp3BheWxvYWTFAvl7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwZmRmODM4OTU1Mjk4YmQxMWE3NjkxNDAxNTQwZjhiZWEwNDJjNmNiNDYyNTc3NWNkYTk0YWIwNDZhYTMzZGQ1ZDBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwZmRmODM4OTU1Mjk4YmQxMWE3NjkxNDAxNTQwZjhiZWEwNDJjNmNiNDYyNTc3NWNkYTk0YWIwNDZhYTMzZGQ1ZDBhIiwidWlkIjoiYjRjYTQ5Y2U1NDZmZmViNzhjMzQ3MTQ4MWYyYTljMTkiLCJ1c2VybmFtZSI6InNvbmVyZWtlciJ9LCJzZXJ2aWNlIjp7Imhvc3RuYW1lIjoid3d3LnNvbmVyZWtlci5jb20iLCJwcm90b2NvbCI6Imh0dHA6In0sInR5cGUiOiJ3ZWJfc2VydmljZV9iaW5kaW5nIiwidmVyc2lvbiI6MX0sImNsaWVudCI6eyJuYW1lIjoia2V5YmFzZS5pbyBnbyBjbGllbnQiLCJ2ZXJzaW9uIjoiMS4wLjE4In0sImN0aW1lIjoxNDgyNDc2NTc3LCJleHBpcmVfaW4iOjUwNDU3NjAwMCwibWVya2xlX3Jvb3QiOnsiY3RpbWUiOjE0ODI0NzY0NDQsImhhc2giOiI0M2EyNDhhOTZiODJmMDBjYzI1NGVmMTlkOTdlODg0NTkwMWY4YzlkZWMwOWZkMjZiOTJkNWE3NjNjYTJmNzlkN2Q3MTc4MTA0ZDEzNGVkOGFhMzRlYThiODYxOTBiY2E3ZjdmNGM4NTNkYTMzYjJjNDlmNjhhYjkyZTVkZTk3ZSIsInNlcW5vIjo3NzI1Nzd9LCJwcmV2IjoiMTMzMjU5MWRmYjc1NmEwNWFkMGFjYjNiYmM1NjRkNzhmODE4MjgwNDE0YzQxOGQ2Yzc2YjdmYzFlMzE1ODYxMSIsInNlcW5vIjo2LCJ0YWciOiJzaWduYXR1cmUifaNzaWfEQJ4xWp2w/+eXhLfPCOx6PJB81V2RgL9E1Ei2xswhFsZK0KfI9iWfNFQ+fxkyIBcm0qmaENR220mnWOBCggB++wyoc2lnX3R5cGUgpGhhc2iCpHR5cGUIpXZhbHVlxCAVtHC9l+xAxVWvb27BP18GO+gcpMCv3/56ekNYz+BICaN0YWfNAgKndmVyc2lvbgE=
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/sonereker
+
+==================================================================
