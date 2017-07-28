@@ -46,7 +46,7 @@ table {
 --------------------------------------------- */
 body {
   font-family: "Fira Mono", 'Andale Mono', Consolas, 'Lucida Console', Menlo, 'Luxi Mono', monospace;
-  color: #90A4AE;
+  color: #424747;
   background-color: #fff;
   font-size: 15px;
   text-rendering: optimizeLegibility;
@@ -64,7 +64,7 @@ div#container {
 h1.logo {
   font-size: 26px;
   margin-bottom: 30px;
-  color: #00BFA5; }
+  color: #1f57a4; }
 
 hr {
   height: 3px;
@@ -80,9 +80,9 @@ a, a:visited {
   border-bottom: 1px dotted #CFD8DC; }
 
 a:hover {
-  color: #00BFA5 !important;
+  color: #1f57a4 !important;
   text-decoration: none;
-  border-bottom: 2px solid #00BFA5; }
+  border-bottom: 2px solid #1f57a4; }
 
 div#wrapper {
   width: 360px;
@@ -146,7 +146,7 @@ div#wrapper {
 .blinking-cursor {
   font-weight: 100;
   font-size: 30px;
-  color: #00BFA5;
+  color: #1f57a4;
   -webkit-animation: 1s blink step-end infinite;
   -moz-animation: 1s blink step-end infinite;
   -ms-animation: 1s blink step-end infinite;
@@ -156,38 +156,28 @@ div#wrapper {
 @keyframes blink {
   from, to {
     color: transparent; }
-
   50% {
-    color: #00BFA5; } }
-
+    color: #1f57a4; } }
 @-moz-keyframes blink {
   from, to {
     color: transparent; }
-
   50% {
-    color: #00BFA5; } }
-
+    color: #1f57a4; } }
 @-webkit-keyframes blink {
   from, to {
     color: transparent; }
-
   50% {
-    color: #00BFA5; } }
-
+    color: #1f57a4; } }
 @-ms-keyframes blink {
   from, to {
     color: transparent; }
-
   50% {
-    color: #00BFA5; } }
-
+    color: #1f57a4; } }
 @-o-keyframes blink {
   from, to {
     color: transparent; }
-
   50% {
-    color: #00BFA5; } }
-
+    color: #1f57a4; } }
 @media only screen and (max-width: 736px) {
   body {
     font-family: "Fira Mono", 'Andale Mono', Consolas, 'Lucida Console', Menlo, 'Luxi Mono', monospace;
@@ -200,7 +190,7 @@ div#wrapper {
   h1.logo {
     font-size: 29px;
     margin-bottom: 30px;
-    color: #00BFA5; }
+    color: #1f57a4; }
 
   div#instafeed {
     display: none !important; }
@@ -237,3 +227,5 @@ div#wrapper {
       line-height: 1.5em; }
       div#wrapper div.elsewhere span {
         display: block; } }
+
+/*# sourceMappingURL=screen.css.map */
