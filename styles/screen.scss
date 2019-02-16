@@ -1,19 +1,86 @@
 /* reset styles
 --------------------------------------------- */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -23,8 +90,16 @@ time, mark, audio, video {
 
 /* HTML5 display-role reset for older browsers */
 
-article, aside, details, figcaption, figure,
-footer, header, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
   display: block;
 }
 
@@ -32,16 +107,20 @@ body {
   line-height: 1;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
-blockquote, q {
+blockquote,
+q {
   quotes: none;
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
   content: '';
   content: none;
 }
@@ -55,7 +134,8 @@ table {
 --------------------------------------------- */
 
 body {
-  font-family: "Fira Mono", 'Andale Mono', Consolas, 'Lucida Console', Menlo, 'Luxi Mono', monospace;
+  font-family: 'IBM Plex Mono', 'Andale Mono', Consolas, 'Lucida Console', Menlo,
+    'Luxi Mono', monospace;
   color: #424747;
   background-color: #fff;
   font-size: 15px;
@@ -70,7 +150,7 @@ div#container {
   bottom: 10px;
   right: 10px;
   overflow: hidden;
-  background: #ECEFF1;
+  background: #eceff1;
 }
 
 h1.logo {
@@ -84,14 +164,15 @@ hr {
   border: 0;
   width: 10px;
   margin: 30px 0 25px 0;
-  background: #B0BEC5;
+  background: #b0bec5;
 }
 
-a, a:visited {
+a,
+a:visited {
   padding-top: 2px;
-  color: #546E7A !important;
+  color: #546e7a !important;
   text-decoration: none;
-  border-bottom: 1px dotted #CFD8DC;
+  border-bottom: 1px dotted #cfd8dc;
 }
 
 a:hover {
@@ -121,7 +202,9 @@ div#wrapper {
   }
 }
 
-.video, .photo-landscape, .photo-square {
+.video,
+.photo-landscape,
+.photo-square {
   display: none;
 }
 
@@ -156,6 +239,7 @@ div#wrapper {
 .grid-item img {
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
   display: block;
   max-width: 100%;
   opacity: 0.2;
@@ -183,7 +267,8 @@ div#wrapper {
 }
 
 @keyframes blink {
-  from, to {
+  from,
+  to {
     color: transparent;
   }
   50% {
@@ -192,7 +277,8 @@ div#wrapper {
 }
 
 @-moz-keyframes blink {
-  from, to {
+  from,
+  to {
     color: transparent;
   }
   50% {
@@ -201,7 +287,8 @@ div#wrapper {
 }
 
 @-webkit-keyframes blink {
-  from, to {
+  from,
+  to {
     color: transparent;
   }
   50% {
@@ -210,7 +297,8 @@ div#wrapper {
 }
 
 @-ms-keyframes blink {
-  from, to {
+  from,
+  to {
     color: transparent;
   }
   50% {
@@ -219,7 +307,8 @@ div#wrapper {
 }
 
 @-o-keyframes blink {
-  from, to {
+  from,
+  to {
     color: transparent;
   }
   50% {
@@ -227,11 +316,11 @@ div#wrapper {
   }
 }
 
-@media only screen
-and (max-width: 736px) {
+@media only screen and (max-width: 736px) {
   body {
-    font-family: "Fira Mono", 'Andale Mono', Consolas, 'Lucida Console', Menlo, 'Luxi Mono', monospace;
-    color: #90A4AE;
+    font-family: 'IBM Plex Mono', 'Andale Mono', Consolas, 'Lucida Console',
+      Menlo, 'Luxi Mono', monospace;
+    color: #90a4ae;
     background-color: #fff;
     font-size: 21px;
     text-rendering: optimizeLegibility;
@@ -255,11 +344,11 @@ and (max-width: 736px) {
     bottom: 0;
     right: 0;
     overflow: hidden;
-    background: #ECEFF1;
+    background: #eceff1;
   }
 
   div#wrapper {
-    background: #ECEFF1;
+    background: #eceff1;
     text-align: left;
     padding: 10px;
     height: 500px;
