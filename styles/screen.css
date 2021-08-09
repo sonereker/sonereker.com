@@ -143,7 +143,10 @@ div#container {
 
 h1 {
   font-size: 1.953rem;
-  padding-bottom: 0; }
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  font-weight: normal;
+  letter-spacing: -1px; }
 
 div.about a, div.about a:visited {
   color: #21272a !important;
@@ -160,7 +163,8 @@ div#wrapper {
   padding: 40px; }
 
 div.about {
-  color: #343a3f; }
+  color: #343a3f;
+  line-height: 1.2em; }
 
 div.about p {
   font-size: 1rem; }
@@ -180,6 +184,9 @@ div.sep {
   margin: 20px 0;
   color: #a2a9b0;
   font-weight: lighter; }
+
+ul {
+  line-height: 1.2em; }
 
 ul li {
   display: inline;
