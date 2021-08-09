@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* reset styles
 --------------------------------------------- */
 html,
@@ -84,8 +85,7 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  vertical-align: baseline;
-}
+  vertical-align: baseline; }
 
 /* HTML5 display-role reset for older browsers */
 article,
@@ -98,46 +98,39 @@ header,
 menu,
 nav,
 section {
-  display: block;
-}
+  display: block; }
 
 body {
-  line-height: 1;
-}
+  line-height: 1; }
 
 ol,
 ul {
-  list-style: none;
-}
+  list-style: none; }
 
 blockquote,
 q {
-  quotes: none;
-}
+  quotes: none; }
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
   content: '';
-  content: none;
-}
+  content: none; }
 
 table {
   border-collapse: collapse;
-  border-spacing: 0;
-}
+  border-spacing: 0; }
 
 /* Main
 --------------------------------------------- */
 body {
-  font-family: 'IBM Plex Mono', 'Andale Mono', Consolas, 'Lucida Console', Menlo, 'Luxi Mono', monospace;
-  color: #424747;
+  font-family: 'Space Grotesk', sans-serif;
+  color: #21272a;
   background-color: #fff;
-  font-size: 15px;
+  font-size: 1.563rem;
   text-rendering: optimizeLegibility;
-  line-height: 1.6em;
-}
+  line-height: 1.7em; }
 
 div#container {
   position: fixed;
@@ -146,118 +139,60 @@ div#container {
   bottom: 10px;
   right: 10px;
   overflow: hidden;
-  background: #eceff1;
-}
+  background: #dde1e6; }
 
-h1.logo {
-  font-size: 28px;
-  margin: 30px;
-  font-weight: normal;
-  letter-spacing: -1px;
-  color: #333;
-}
+h1 {
+  font-size: 1.953rem;
+  padding-bottom: 0; }
 
-hr {
-  height: 3px;
-  border: 0;
-  width: 10px;
-  margin: 30px 0 25px 0;
-  background: #b0bec5;
-}
+div.about a, div.about a:visited {
+  color: #21272a !important;
+  border-bottom: 0 !important; }
+
+div.about a:hover {
+  color: #00539a !important; }
+
+div.about a:hover::after {
+  content: " ✈";
+  color: #33b1ff; }
+
+div#wrapper {
+  padding: 40px; }
+
+div.about {
+  color: #343a3f; }
+
+div.about p {
+  font-size: 1rem; }
 
 a,
 a:visited {
   padding-top: 2px;
-  color: #546e7a !important;
-  text-decoration: none;
-  border-bottom: 1px dotted #cfd8dc;
-}
+  color: #00539a !important;
+  text-decoration: none; }
 
 a:hover {
-  color: #1f57a4 !important;
+  color: #012749 !important;
   text-decoration: none;
-  border-bottom: 2px solid #1f57a4;
-}
+  border-bottom: 2px solid #012749; }
 
-/* Cursor
---------------------------------------------- */
-.blinking-cursor {
-  font-weight: 100;
-  font-size: 30px;
-  color: #333;
-  -webkit-animation: 1s blink step-end infinite;
-  animation: 1s blink step-end infinite;
-}
+div.sep {
+  margin: 20px 0;
+  color: #a2a9b0;
+  font-weight: lighter; }
 
-@keyframes blink {
-  from,
-  to {
-    color: transparent;
-  }
-  50% {
-    color: #333;
-  }
-}
+ul li {
+  display: inline;
+  color: #c1c7cd; }
 
-@-webkit-keyframes blink {
-  from,
-  to {
-    color: transparent;
-  }
-  50% {
-    color: #333;
-  }
-}
+ul li::before {
+  content: " • "; }
 
-@media only screen and (max-width: 736px) {
-  body {
-    font-family: 'IBM Plex Mono', 'Andale Mono', Consolas, 'Lucida Console', Menlo, 'Luxi Mono', monospace;
-    color: #90a4ae;
-    background-color: #fff;
-    font-size: 21px;
-    text-rendering: optimizeLegibility;
-    line-height: 1.5em;
-  }
-  h1.logo {
-    margin-bottom: 30px;
-    color: #333;
-  }
-  div#instafeed {
-    display: none !important;
-  }
-  div#container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    overflow: hidden;
-    background: #eceff1;
-  }
-  div#wrapper {
-    background: #eceff1;
-    text-align: left;
-    padding: 10px;
-    height: 500px;
-    position: relative;
-    top: 10px;
-    left: 10px;
-    bottom: 10px;
-    right: 10px;
-    overflow: hidden;
-    margin-left: 0;
-    margin-top: 0;
-    border-radius: 0;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-  }
-  div#wrapper div.elsewhere {
-    margin-top: 30px;
-    font-size: 13px;
-    line-height: 1.5em;
-  }
-  div#wrapper div.elsewhere span {
-    display: block;
-  }
-}
+ul li:first-child::before {
+  content: ""; }
+
+sup {
+  font-size: 13px;
+  vertical-align: super; }
+
 /*# sourceMappingURL=screen.css.map */
