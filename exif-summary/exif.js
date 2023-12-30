@@ -47,7 +47,7 @@
                 month: "short",
                 day: "numeric"
             };
-            summary.innerHTML = created.toLocaleString('en', options) + '</br>' + tags['LensModel'].description + '</br>' + tags['FocalLengthIn35mmFilm'].description + 'mm • ƒ' + tags['FNumber'].description.replace('f/','') + ' • ISO' + tags['ISOSpeedRatings'].description;
+            summary.innerHTML = '<br>' + created.toLocaleString('en', options) + '</br>' + tags['LensModel'].description + '</br>' + tags['FocalLengthIn35mmFilm'].description + 'mm • ƒ' + tags['FNumber'].description.replace('f/','') + ' • ISO' + tags['ISOSpeedRatings'].description;
             // <<<
         }).catch(function (error) {
             // Handle error.
