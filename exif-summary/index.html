@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Exif Summary Extractor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        #summary {
+            margin-top: 20px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body class="container">
+<h1>Exif Summary Extractor</h1>
+<form>
+    <input type="file" id="file" name="file">
+    <br/>
+    <br/>
+    <input type="submit" value="Load">
+    <br/>
+    <br/>
+    <small>We don't store uploaded photo.</small>
+</form>
+
+<div class="error hidden"></div>
+
+<div id="summary"></div>
+
+<script src="./utils.js"></script>
+<script src="./exif-reader.js"></script>
+<script src="./exif.js"></script>
+</body>
+</html>
