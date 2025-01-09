@@ -184,11 +184,10 @@ div.sep {
 }
 
 ul {
-  line-height: 1.4em;
+  line-height: 1.7em;
 }
 
 ul li {
-  padding: 2px 0;
   color: hsl(0deg, 0%, 41%);
   list-style: none;
 }
@@ -196,14 +195,3 @@ ul li {
 ul li::before {
   content: " + ";
 }
-
-ul li.continue::before {
-  content: "";
-}
-
-sup {
-  font-size: 13px;
-  vertical-align: super;
-}
-
-/*# sourceMappingURL=screen.css.map */
