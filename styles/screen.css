@@ -129,17 +129,15 @@ table {
   border-spacing: 0;
 }
 
-@font-face {
-  font-family: "AllianceNo2-Light";
-  src: url("../AllianceNo2Light/font.woff2") format("woff2"), url("../AllianceNo2Light/font.woff") format("woff");
-}
 /* Main
 --------------------------------------------- */
 body {
-  font-family: "AllianceNo2-Light", sans-serif;
+  font-family: "JetBrainsMono", sans-serif;
   background-color: #0E0B04;
-  color: hsl(0deg, 0%, 41%);
-  font-size: 1em;
+  color: #C6C2C0 !important;
+  font-size: 15px;
+  font-weight: 300;
+  text-transform: uppercase;
   text-rendering: optimizeLegibility;
   line-height: 1.7em;
 }
@@ -154,60 +152,29 @@ div#container {
 }
 
 h1 {
-  color: #C6C2C0;
-  font-size: 2.441rem;
   padding-bottom: 0;
-  margin-bottom: 20px;
   font-weight: normal;
-  letter-spacing: -1px;
 }
 
-div.about a,
-div.about a:visited {
-  color: #C6C2C0 !important;
-  text-decoration: none;
-}
-
-div.about a:hover {
+div.title a:hover {
   color: hsl(16deg, 100%, 50%) !important;
-}
-
-div.about a:hover::after {
-  content: " ✈";
-  color: hsl(0deg, 0%, 41%);
-}
-
-div.about a sup {
-  text-decoration: none !important;
 }
 
 div#wrapper {
   padding: 50px;
 }
 
-div.about {
-  font-size: 1.953rem;
-  color: hsl(0deg, 0%, 41%);
-  line-height: 1.4em;
-}
-
-div.about p {
-  font-size: 1rem;
-}
-
 a,
 a:visited {
   padding-top: 2px;
   color: #C6C2C0 !important;
-  text-decoration: underline;
+  text-decoration: none;
   text-decoration-color: hsl(0deg, 0%, 41%);
 }
 
 a:hover {
-  color: #C6C2C0 !important;
+  color: hsl(16deg, 100%, 50%) !important;
   text-decoration-color: hsl(16deg, 100%, 50%) !important;
-  text-decoration: underline;
-  text-decoration-style: solid;
 }
 
 div.sep {
@@ -218,19 +185,19 @@ div.sep {
 
 ul {
   line-height: 1.4em;
-  font-size: 1.953rem;
 }
 
 ul li {
-  display: inline;
+  padding: 2px 0;
   color: hsl(0deg, 0%, 41%);
+  list-style: none;
 }
 
 ul li::before {
-  content: " • ";
+  content: " + ";
 }
 
-ul li:first-child::before {
+ul li.continue::before {
   content: "";
 }
 
