@@ -160,6 +160,18 @@ div.title a:hover {
   color: hsl(16deg, 100%, 50%) !important;
 }
 
+.blink-box {
+  display: inline-block;
+  color: hsl(16deg, 100%, 50%) !important;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 div#wrapper {
   padding: 50px;
 }
