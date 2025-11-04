@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Kod Oluşturucu</title>
+    <title>QR Code Generator</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <style>
         * {
@@ -13,21 +13,22 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: center;
-            padding: 20px;
+            align-items: flex-start;
+            padding: 10px;
+            padding-top: 20px;
         }
 
         .container {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            max-width: 600px;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            max-width: 480px;
             width: 100%;
             animation: fadeIn 0.5s ease-out;
         }
@@ -45,106 +46,104 @@
 
         h1 {
             text-align: center;
-            color: #333;
-            margin-bottom: 30px;
-            font-size: 2.5em;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #2c3e50;
+            margin-bottom: 24px;
+            font-size: 1.75rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         label {
             display: block;
-            margin-bottom: 8px;
-            color: #555;
+            margin-bottom: 6px;
+            color: #5a6c7d;
             font-weight: 500;
-            font-size: 14px;
+            font-size: 0.875rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         input, textarea, select {
             width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #e0e0e0;
-            border-radius: 10px;
+            padding: 12px;
+            border: 2px solid #e1e8ed;
+            border-radius: 8px;
             font-size: 16px;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             font-family: inherit;
+            background-color: #f8f9fa;
         }
 
         input:focus, textarea:focus, select:focus {
             outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-            transform: translateY(-2px);
+            border-color: #5a6c7d;
+            background-color: white;
+            box-shadow: 0 0 0 3px rgba(90, 108, 125, 0.1);
         }
 
         textarea {
             resize: vertical;
-            min-height: 100px;
+            min-height: 80px;
         }
 
         .button-group {
             display: flex;
-            gap: 15px;
-            margin-top: 30px;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 24px;
         }
 
         button {
-            flex: 1;
-            padding: 14px 30px;
+            width: 100%;
+            padding: 14px 20px;
             border: none;
-            border-radius: 10px;
-            font-size: 16px;
+            border-radius: 8px;
+            font-size: 0.9375rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
             color: white;
         }
 
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        .btn-primary:hover, .btn-primary:active {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(44, 62, 80, 0.3);
         }
 
         .btn-secondary {
-            background: #f5f5f5;
-            color: #333;
+            background: #ecf0f1;
+            color: #2c3e50;
         }
 
-        .btn-secondary:hover {
-            background: #e8e8e8;
-            transform: translateY(-2px);
+        .btn-secondary:hover, .btn-secondary:active {
+            background: #d5dbdd;
         }
 
         .btn-danger {
-            background: #ff6b6b;
+            background: #7f8c8d;
             color: white;
         }
 
-        .btn-danger:hover {
-            background: #ff5252;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+        .btn-danger:hover, .btn-danger:active {
+            background: #5a6c7d;
         }
 
         #qr-container {
-            margin-top: 30px;
+            margin-top: 24px;
             text-align: center;
             padding: 20px;
             background: #f8f9fa;
-            border-radius: 15px;
+            border-radius: 12px;
             display: none;
             animation: slideIn 0.5s ease-out;
         }
@@ -166,436 +165,537 @@
 
         #qrcode {
             display: inline-block;
-            padding: 20px;
+            padding: 16px;
             background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 16px 0;
+        }
+
+        #qrcode canvas {
+            max-width: 100%;
+            height: auto;
         }
 
         .qr-info {
-            margin-top: 15px;
-            padding: 15px;
+            margin-top: 12px;
+            padding: 12px;
             background: white;
-            border-radius: 10px;
-            border-left: 4px solid #667eea;
+            border-radius: 8px;
+            border-left: 4px solid #34495e;
         }
 
         .qr-info h3 {
-            color: #333;
-            margin-bottom: 10px;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 1rem;
         }
 
         .qr-info p {
-            color: #666;
-            line-height: 1.6;
+            color: #5a6c7d;
+            line-height: 1.5;
+            font-size: 0.875rem;
         }
 
         .data-type-selector {
-            display: flex;
-            gap: 10px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
             margin-bottom: 20px;
-            flex-wrap: wrap;
         }
 
         .type-btn {
-            flex: 1;
-            min-width: 100px;
-            padding: 10px 15px;
-            border: 2px solid #e0e0e0;
+            padding: 10px 12px;
+            border: 2px solid #e1e8ed;
             background: white;
-            border-radius: 10px;
+            border-radius: 8px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             text-align: center;
             font-weight: 500;
+            font-size: 0.875rem;
+            color: #5a6c7d;
         }
 
         .type-btn.active {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #34495e;
             color: white;
-            border-color: transparent;
+            border-color: #34495e;
         }
 
         .type-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .download-btn {
             display: inline-block;
-            margin-top: 15px;
+            margin-top: 12px;
             padding: 10px 20px;
-            background: linear-gradient(135deg, #00d2ff 0%, #3a47d5 100%);
+            background: linear-gradient(135deg, #5a6c7d 0%, #34495e 100%);
             color: white;
             text-decoration: none;
-            border-radius: 10px;
+            border-radius: 8px;
             font-weight: 600;
-            transition: all 0.3s ease;
+            font-size: 0.875rem;
+            transition: all 0.2s ease;
         }
 
         .download-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(58, 71, 213, 0.3);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(52, 73, 94, 0.3);
         }
 
         .success-message {
             position: fixed;
             top: 20px;
-            right: 20px;
-            background: #4caf50;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #27ae60;
             color: white;
-            padding: 15px 25px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+            padding: 12px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
             display: none;
-            animation: slideInRight 0.3s ease-out;
+            animation: slideDown 0.3s ease-out;
+            font-size: 0.875rem;
+            z-index: 1000;
         }
 
-        @keyframes slideInRight {
+        @keyframes slideDown {
             from {
                 opacity: 0;
-                transform: translateX(100px);
+                transform: translate(-50%, -20px);
             }
             to {
                 opacity: 1;
-                transform: translateX(0);
+                transform: translate(-50%, 0);
             }
         }
 
         .success-message.show {
             display: block;
         }
+
+        /* Tablet and larger screens */
+        @media (min-width: 640px) {
+            .container {
+                padding: 32px;
+            }
+
+            h1 {
+                font-size: 2.25rem;
+                margin-bottom: 32px;
+            }
+
+            .data-type-selector {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+            }
+
+            .button-group {
+                flex-direction: row;
+                gap: 12px;
+            }
+
+            button {
+                flex: 1;
+            }
+        }
+
+        /* Desktop screens */
+        @media (min-width: 1024px) {
+            body {
+                align-items: center;
+                padding: 40px;
+            }
+
+            .container {
+                padding: 40px;
+                max-width: 600px;
+            }
+
+            .data-type-selector {
+                display: flex;
+                gap: 12px;
+            }
+
+            .type-btn {
+                flex: 1;
+            }
+        }
+
+        /* Touch device optimizations */
+        @media (hover: none) {
+            button:active {
+                transform: scale(0.98);
+            }
+
+            .type-btn:active {
+                transform: scale(0.98);
+            }
+        }
+
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            input, textarea, select {
+                border-width: 3px;
+            }
+
+            .btn-primary {
+                background: #2c3e50;
+            }
+
+            .type-btn.active {
+                background: #2c3e50;
+                outline: 2px solid #000;
+            }
+        }
+
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>QR Kod Oluşturucu</h1>
-        
-        <div class="data-type-selector">
-            <div class="type-btn active" onclick="selectType('text')">Metin</div>
-            <div class="type-btn" onclick="selectType('url')">URL</div>
-            <div class="type-btn" onclick="selectType('email')">E-posta</div>
-            <div class="type-btn" onclick="selectType('phone')">Telefon</div>
-            <div class="type-btn" onclick="selectType('wifi')">Wi-Fi</div>
-            <div class="type-btn" onclick="selectType('vcard')">Kartvizit</div>
-        </div>
+<div class="container">
+    <h1>QR Code Generator</h1>
 
-        <form id="qr-form">
-            <!-- Text Fields -->
-            <div id="text-fields" class="field-group">
-                <div class="form-group">
-                    <label for="text-content">Metin İçeriği:</label>
-                    <textarea id="text-content" placeholder="QR koda dönüştürülecek metni girin..."></textarea>
-                </div>
-            </div>
-
-            <!-- URL Fields -->
-            <div id="url-fields" class="field-group" style="display: none;">
-                <div class="form-group">
-                    <label for="url-content">Web Adresi:</label>
-                    <input type="url" id="url-content" placeholder="https://example.com">
-                </div>
-            </div>
-
-            <!-- Email Fields -->
-            <div id="email-fields" class="field-group" style="display: none;">
-                <div class="form-group">
-                    <label for="email-address">E-posta Adresi:</label>
-                    <input type="email" id="email-address" placeholder="ornek@email.com">
-                </div>
-                <div class="form-group">
-                    <label for="email-subject">Konu:</label>
-                    <input type="text" id="email-subject" placeholder="E-posta konusu">
-                </div>
-                <div class="form-group">
-                    <label for="email-body">Mesaj:</label>
-                    <textarea id="email-body" placeholder="E-posta içeriği"></textarea>
-                </div>
-            </div>
-
-            <!-- Phone Fields -->
-            <div id="phone-fields" class="field-group" style="display: none;">
-                <div class="form-group">
-                    <label for="phone-number">Telefon Numarası:</label>
-                    <input type="tel" id="phone-number" placeholder="+90 555 123 4567">
-                </div>
-            </div>
-
-            <!-- WiFi Fields -->
-            <div id="wifi-fields" class="field-group" style="display: none;">
-                <div class="form-group">
-                    <label for="wifi-ssid">Ağ Adı (SSID):</label>
-                    <input type="text" id="wifi-ssid" placeholder="WiFi ağ adı">
-                </div>
-                <div class="form-group">
-                    <label for="wifi-password">Şifre:</label>
-                    <input type="password" id="wifi-password" placeholder="WiFi şifresi">
-                </div>
-                <div class="form-group">
-                    <label for="wifi-encryption">Şifreleme Türü:</label>
-                    <select id="wifi-encryption">
-                        <option value="WPA">WPA/WPA2</option>
-                        <option value="WEP">WEP</option>
-                        <option value="nopass">Şifresiz</option>
-                    </select>
-                </div>
-            </div>
-
-            <!-- VCard Fields -->
-            <div id="vcard-fields" class="field-group" style="display: none;">
-                <div class="form-group">
-                    <label for="vcard-name">Ad Soyad:</label>
-                    <input type="text" id="vcard-name" placeholder="Ad Soyad">
-                </div>
-                <div class="form-group">
-                    <label for="vcard-org">Şirket:</label>
-                    <input type="text" id="vcard-org" placeholder="Şirket adı">
-                </div>
-                <div class="form-group">
-                    <label for="vcard-title">Ünvan:</label>
-                    <input type="text" id="vcard-title" placeholder="İş ünvanı">
-                </div>
-                <div class="form-group">
-                    <label for="vcard-phone">Telefon:</label>
-                    <input type="tel" id="vcard-phone" placeholder="+90 555 123 4567">
-                </div>
-                <div class="form-group">
-                    <label for="vcard-email">E-posta:</label>
-                    <input type="email" id="vcard-email" placeholder="ornek@email.com">
-                </div>
-                <div class="form-group">
-                    <label for="vcard-website">Web Sitesi:</label>
-                    <input type="url" id="vcard-website" placeholder="https://example.com">
-                </div>
-                <div class="form-group">
-                    <label for="vcard-address">Adres:</label>
-                    <textarea id="vcard-address" placeholder="Tam adres"></textarea>
-                </div>
-            </div>
-
-            <div class="button-group">
-                <button type="button" class="btn-primary" onclick="generateQR()">QR Kod Oluştur</button>
-                <button type="button" class="btn-secondary" onclick="loadFromStorage()">Kayıtlı Veriyi Yükle</button>
-                <button type="button" class="btn-danger" onclick="clearForm()">Temizle</button>
-            </div>
-        </form>
-
-        <div id="qr-container">
-            <h2>QR Kodunuz Hazır!</h2>
-            <div id="qrcode"></div>
-            <div class="qr-info">
-                <h3>QR Kod Bilgileri</h3>
-                <p id="qr-details"></p>
-            </div>
-            <a href="#" id="download-link" class="download-btn" download="qrcode.png">QR Kodu İndir</a>
-        </div>
+    <div class="data-type-selector">
+        <div class="type-btn active" onclick="selectType('text')">Text</div>
+        <div class="type-btn" onclick="selectType('url')">URL</div>
+        <div class="type-btn" onclick="selectType('email')">Email</div>
+        <div class="type-btn" onclick="selectType('phone')">Phone</div>
+        <div class="type-btn" onclick="selectType('wifi')">WiFi</div>
+        <div class="type-btn" onclick="selectType('vcard')">vCard</div>
     </div>
 
-    <div class="success-message" id="success-message">
-        Veriler başarıyla kaydedildi!
+    <form id="qr-form">
+        <!-- Text Fields -->
+        <div id="text-fields" class="field-group">
+            <div class="form-group">
+                <label for="text-content">Text Content:</label>
+                <textarea id="text-content" placeholder="Enter text to convert to QR code..."></textarea>
+            </div>
+        </div>
+
+        <!-- URL Fields -->
+        <div id="url-fields" class="field-group" style="display: none;">
+            <div class="form-group">
+                <label for="url-content">Website URL:</label>
+                <input type="url" id="url-content" placeholder="https://example.com">
+            </div>
+        </div>
+
+        <!-- Email Fields -->
+        <div id="email-fields" class="field-group" style="display: none;">
+            <div class="form-group">
+                <label for="email-address">Email Address:</label>
+                <input type="email" id="email-address" placeholder="example@email.com">
+            </div>
+            <div class="form-group">
+                <label for="email-subject">Subject:</label>
+                <input type="text" id="email-subject" placeholder="Email subject">
+            </div>
+            <div class="form-group">
+                <label for="email-body">Message:</label>
+                <textarea id="email-body" placeholder="Email content"></textarea>
+            </div>
+        </div>
+
+        <!-- Phone Fields -->
+        <div id="phone-fields" class="field-group" style="display: none;">
+            <div class="form-group">
+                <label for="phone-number">Phone Number:</label>
+                <input type="tel" id="phone-number" placeholder="+1 555 123 4567">
+            </div>
+        </div>
+
+        <!-- WiFi Fields -->
+        <div id="wifi-fields" class="field-group" style="display: none;">
+            <div class="form-group">
+                <label for="wifi-ssid">Network Name (SSID):</label>
+                <input type="text" id="wifi-ssid" placeholder="WiFi network name">
+            </div>
+            <div class="form-group">
+                <label for="wifi-password">Password:</label>
+                <input type="password" id="wifi-password" placeholder="WiFi password">
+            </div>
+            <div class="form-group">
+                <label for="wifi-encryption">Encryption Type:</label>
+                <select id="wifi-encryption">
+                    <option value="WPA">WPA/WPA2</option>
+                    <option value="WEP">WEP</option>
+                    <option value="nopass">No Password</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- VCard Fields -->
+        <div id="vcard-fields" class="field-group" style="display: none;">
+            <div class="form-group">
+                <label for="vcard-firstname">First Name:</label>
+                <input type="text" id="vcard-firstname" placeholder="John">
+            </div>
+            <div class="form-group">
+                <label for="vcard-lastname">Last Name:</label>
+                <input type="text" id="vcard-lastname" placeholder="Doe">
+            </div>
+            <div class="form-group">
+                <label for="vcard-org">Company:</label>
+                <input type="text" id="vcard-org" placeholder="Company name">
+            </div>
+            <div class="form-group">
+                <label for="vcard-title">Job Title:</label>
+                <input type="text" id="vcard-title" placeholder="Job title">
+            </div>
+            <div class="form-group">
+                <label for="vcard-phone">Phone:</label>
+                <input type="tel" id="vcard-phone" placeholder="+1 555 123 4567">
+            </div>
+            <div class="form-group">
+                <label for="vcard-email">Email:</label>
+                <input type="email" id="vcard-email" placeholder="example@email.com">
+            </div>
+            <div class="form-group">
+                <label for="vcard-website">Website:</label>
+                <input type="url" id="vcard-website" placeholder="https://example.com">
+            </div>
+            <div class="form-group">
+                <label for="vcard-address">Address:</label>
+                <textarea id="vcard-address" placeholder="Full address"></textarea>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button type="button" class="btn-primary" onclick="generateQR()">Generate QR</button>
+            <button type="button" class="btn-secondary" onclick="loadFromStorage()">Load Saved</button>
+            <button type="button" class="btn-danger" onclick="clearForm()">Clear</button>
+        </div>
+    </form>
+
+    <div id="qr-container">
+        <h2 style="color: #2c3e50; font-size: 1.25rem; margin-bottom: 16px;">Your QR Code is Ready!</h2>
+        <div id="qrcode"></div>
+        <div class="qr-info">
+            <h3>QR Code Info</h3>
+            <p id="qr-details"></p>
+        </div>
+        <a href="#" id="download-link" class="download-btn" download="qrcode.png">Download QR Code</a>
     </div>
+</div>
 
-    <script>
-        let currentType = 'text';
-        let qrcode = null;
+<div class="success-message" id="success-message">
+    Data saved successfully!</div>
 
-        // Sayfa yüklendiğinde kayıtlı veriyi kontrol et
-        window.onload = function() {
-            const savedData = localStorage.getItem('qrFormData');
-            if (savedData) {
-                const confirmLoad = confirm('Kayıtlı veri bulundu. Yüklemek ister misiniz?');
-                if (confirmLoad) {
-                    loadFromStorage();
-                }
+<script>
+    let currentType = 'text';
+    let qrcode = null;
+
+    // Check for saved data on page load
+    window.onload = function() {
+        const savedData = localStorage.getItem('qrFormData');
+        if (savedData) {
+            const confirmLoad = confirm('Saved data found. Would you like to load it?');
+            if (confirmLoad) {
+                loadFromStorage();
             }
-        };
-
-        function selectType(type) {
-            currentType = type;
-            
-            // Tüm type butonlarını güncelle
-            document.querySelectorAll('.type-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
-            
-            // Tüm field gruplarını gizle
-            document.querySelectorAll('.field-group').forEach(group => {
-                group.style.display = 'none';
-            });
-            
-            // Seçilen field grubunu göster
-            document.getElementById(`${type}-fields`).style.display = 'block';
         }
+    };
 
-        function generateQR() {
-            let qrData = '';
-            
-            switch(currentType) {
-                case 'text':
-                    qrData = document.getElementById('text-content').value;
-                    break;
-                case 'url':
-                    qrData = document.getElementById('url-content').value;
-                    break;
-                case 'email':
-                    const email = document.getElementById('email-address').value;
-                    const subject = document.getElementById('email-subject').value;
-                    const body = document.getElementById('email-body').value;
-                    qrData = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-                    break;
-                case 'phone':
-                    qrData = `tel:${document.getElementById('phone-number').value}`;
-                    break;
-                case 'wifi':
-                    const ssid = document.getElementById('wifi-ssid').value;
-                    const password = document.getElementById('wifi-password').value;
-                    const encryption = document.getElementById('wifi-encryption').value;
-                    qrData = `WIFI:T:${encryption};S:${ssid};P:${password};;`;
-                    break;
-                case 'vcard':
-                    const name = document.getElementById('vcard-name').value;
-                    const org = document.getElementById('vcard-org').value;
-                    const title = document.getElementById('vcard-title').value;
-                    const phone = document.getElementById('vcard-phone').value;
-                    const vcardEmail = document.getElementById('vcard-email').value;
-                    const website = document.getElementById('vcard-website').value;
-                    const address = document.getElementById('vcard-address').value;
-                    
-                    qrData = `BEGIN:VCARD
+    function selectType(type) {
+        currentType = type;
+
+        // Update all type buttons
+        document.querySelectorAll('.type-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        event.target.classList.add('active');
+
+        // Hide all field groups
+        document.querySelectorAll('.field-group').forEach(group => {
+            group.style.display = 'none';
+        });
+
+        // Show selected field group
+        document.getElementById(`${type}-fields`).style.display = 'block';
+    }
+
+    function generateQR() {
+        let qrData = '';
+
+        switch(currentType) {
+            case 'text':
+                qrData = document.getElementById('text-content').value;
+                break;
+            case 'url':
+                qrData = document.getElementById('url-content').value;
+                break;
+            case 'email':
+                const email = document.getElementById('email-address').value;
+                const subject = document.getElementById('email-subject').value;
+                const body = document.getElementById('email-body').value;
+                qrData = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                break;
+            case 'phone':
+                qrData = `tel:${document.getElementById('phone-number').value}`;
+                break;
+            case 'wifi':
+                const ssid = document.getElementById('wifi-ssid').value;
+                const password = document.getElementById('wifi-password').value;
+                const encryption = document.getElementById('wifi-encryption').value;
+                qrData = `WIFI:T:${encryption};S:${ssid};P:${password};;`;
+                break;
+            case 'vcard':
+                const firstname = document.getElementById('vcard-firstname').value;
+                const lastname = document.getElementById('vcard-lastname').value;
+                const org = document.getElementById('vcard-org').value;
+                const title = document.getElementById('vcard-title').value;
+                const phone = document.getElementById('vcard-phone').value;
+                const vcardEmail = document.getElementById('vcard-email').value;
+                const website = document.getElementById('vcard-website').value;
+                const address = document.getElementById('vcard-address').value;
+
+                qrData = `BEGIN:VCARD
 VERSION:3.0
-FN:${name}
+N:${lastname};${firstname};;;
+FN:${firstname} ${lastname}
 ORG:${org}
 TITLE:${title}
 TEL:${phone}
 EMAIL:${vcardEmail}
 URL:${website}
-ADR:;;${address}
+ADR:;;${address};;;;
 END:VCARD`;
-                    break;
-            }
-            
-            if (!qrData) {
-                alert('Lütfen QR kod oluşturmak için gerekli bilgileri doldurun!');
-                return;
-            }
-            
-            // Form verilerini localStorage'a kaydet
-            saveToStorage();
-            
-            // QR kod oluştur
-            const qrContainer = document.getElementById('qr-container');
-            const qrDiv = document.getElementById('qrcode');
-            
-            // Önceki QR kodu temizle
-            qrDiv.innerHTML = '';
-            
-            // Yeni QR kod oluştur
-            qrcode = new QRCode(qrDiv, {
-                text: qrData,
-                width: 256,
-                height: 256,
-                colorDark: '#000000',
-                colorLight: '#ffffff',
-                correctLevel: QRCode.CorrectLevel.H
-            });
-            
-            // QR kod detaylarını güncelle
-            document.getElementById('qr-details').textContent = `Tip: ${currentType.toUpperCase()} | Boyut: 256x256px | Hata Düzeltme: Yüksek`;
-            
-            // Container'ı göster
-            qrContainer.classList.add('show');
-            
-            // İndirme linkini ayarla
-            setTimeout(() => {
-                const canvas = qrDiv.querySelector('canvas');
-                if (canvas) {
-                    const downloadLink = document.getElementById('download-link');
-                    downloadLink.href = canvas.toDataURL('image/png');
-                }
-            }, 100);
-            
-            // Başarı mesajını göster
-            showSuccessMessage();
+                break;
         }
 
-        function saveToStorage() {
-            const formData = {
-                type: currentType,
-                data: {}
-            };
-            
-            // Tüm input alanlarını kaydet
-            const inputs = document.querySelectorAll('input, textarea, select');
-            inputs.forEach(input => {
-                if (input.value) {
-                    formData.data[input.id] = input.value;
-                }
-            });
-            
-            localStorage.setItem('qrFormData', JSON.stringify(formData));
+        if (!qrData) {
+            alert('Please fill in the required fields to generate a QR code!');
+            return;
         }
 
-        function loadFromStorage() {
-            const savedData = localStorage.getItem('qrFormData');
-            if (!savedData) {
-                alert('Kayıtlı veri bulunamadı!');
-                return;
+        // Save form data to localStorage
+        saveToStorage();
+
+        // Generate QR code
+        const qrContainer = document.getElementById('qr-container');
+        const qrDiv = document.getElementById('qrcode');
+
+        // Clear previous QR code
+        qrDiv.innerHTML = '';
+
+        // Create new QR code with mobile-optimized size
+        const qrSize = window.innerWidth < 400 ? 200 : 256;
+        qrcode = new QRCode(qrDiv, {
+            text: qrData,
+            width: qrSize,
+            height: qrSize,
+            colorDark: '#2c3e50',
+            colorLight: '#ffffff',
+            correctLevel: QRCode.CorrectLevel.H
+        });
+
+        // Update QR code details
+        document.getElementById('qr-details').textContent = `Type: ${currentType.toUpperCase()} | Size: ${qrSize}x${qrSize}px | Error Correction: High`;
+
+        // Show container
+        qrContainer.classList.add('show');
+
+        // Set download link
+        setTimeout(() => {
+            const canvas = qrDiv.querySelector('canvas');
+            if (canvas) {
+                const downloadLink = document.getElementById('download-link');
+                downloadLink.href = canvas.toDataURL('image/png');
             }
-            
-            const formData = JSON.parse(savedData);
-            
-            // Tipi seç
-            selectType(formData.type);
-            
-            // İlgili type butonunu aktif yap
-            document.querySelectorAll('.type-btn').forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.textContent.toLowerCase().includes(formData.type)) {
-                    btn.classList.add('active');
-                }
-            });
-            
-            // Form alanlarını doldur
-            Object.keys(formData.data).forEach(key => {
-                const element = document.getElementById(key);
-                if (element) {
-                    element.value = formData.data[key];
-                }
-            });
-            
-            // Otomatik QR oluştur
-            generateQR();
-        }
+        }, 100);
 
-        function clearForm() {
-            if (confirm('Form ve kayıtlı veriler temizlenecek. Emin misiniz?')) {
-                // Form alanlarını temizle
-                document.querySelectorAll('input, textarea').forEach(input => {
-                    input.value = '';
-                });
-                
-                // LocalStorage'ı temizle
-                localStorage.removeItem('qrFormData');
-                
-                // QR kod container'ını gizle
-                document.getElementById('qr-container').classList.remove('show');
-                
-                // Başarı mesajı göster
-                showSuccessMessage('Form temizlendi!');
+        // Show success message
+        showSuccessMessage();
+    }
+
+    function saveToStorage() {
+        const formData = {
+            type: currentType,
+            data: {}
+        };
+
+        // Save all input fields
+        const inputs = document.querySelectorAll('input, textarea, select');
+        inputs.forEach(input => {
+            if (input.value) {
+                formData.data[input.id] = input.value;
             }
+        });
+
+        localStorage.setItem('qrFormData', JSON.stringify(formData));
+    }
+
+    function loadFromStorage() {
+        const savedData = localStorage.getItem('qrFormData');
+        if (!savedData) {
+            alert('No saved data found!');
+            return;
         }
 
-        function showSuccessMessage(message = 'Veriler başarıyla kaydedildi!') {
-            const successMsg = document.getElementById('success-message');
-            successMsg.textContent = message;
-            successMsg.classList.add('show');
-            
-            setTimeout(() => {
-                successMsg.classList.remove('show');
-            }, 3000);
+        const formData = JSON.parse(savedData);
+
+        // Select type
+        selectType(formData.type);
+
+        // Activate the corresponding type button
+        document.querySelectorAll('.type-btn').forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.textContent.toLowerCase().includes(formData.type)) {
+                btn.classList.add('active');
+            }
+        });
+
+        // Fill form fields
+        Object.keys(formData.data).forEach(key => {
+            const element = document.getElementById(key);
+            if (element) {
+                element.value = formData.data[key];
+            }
+        });
+
+        // Auto generate QR
+        generateQR();
+    }
+
+    function clearForm() {
+        if (confirm('This will clear the form and saved data. Are you sure?')) {
+            // Clear form fields
+            document.querySelectorAll('input, textarea').forEach(input => {
+                input.value = '';
+            });
+
+            // Clear localStorage
+            localStorage.removeItem('qrFormData');
+
+            // Hide QR code container
+            document.getElementById('qr-container').classList.remove('show');
+
+            // Show success message
+            showSuccessMessage('Form cleared!');
         }
-    </script>
+    }
+
+    function showSuccessMessage(message = 'Data saved successfully!') {
+        const successMsg = document.getElementById('success-message');
+        successMsg.textContent = message;
+        successMsg.classList.add('show');
+
+        setTimeout(() => {
+            successMsg.classList.remove('show');
+        }, 3000);
+    }
+</script>
 </body>
 </html>

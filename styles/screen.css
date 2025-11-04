@@ -133,9 +133,9 @@ table {
 --------------------------------------------- */
 body {
   font-family: "MonaspaceNeon", sans-serif;
-  background-color: #0E0B04;
-  color: #C6C2C0 !important;
-  font-size: 21px;
+  background-color: #0a0a0a;
+  color: #e0e0e0 !important;
+  font-size: 18px;
   font-weight: 300;
   text-transform: uppercase;
   text-rendering: optimizeLegibility;
@@ -144,11 +144,11 @@ body {
 
 div#container {
   position: fixed;
-  top: 10px;
-  left: 10px;
-  bottom: 10px;
-  right: 10px;
-  overflow: hidden;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
 }
 
 h1 {
@@ -157,12 +157,12 @@ h1 {
 }
 
 div.title a:hover {
-  color: hsl(16deg, 100%, 50%) !important;
+  color: #999999 !important;
 }
 
 .blink-box {
   display: inline-block;
-  color: hsl(16deg, 100%, 50%) !important;
+  color: #999999 !important;
   animation: blink 1s infinite;
 }
 
@@ -173,25 +173,25 @@ div.title a:hover {
 }
 
 div#wrapper {
-  padding: 50px;
+  padding: 20px;
 }
 
 a,
 a:visited {
   padding-top: 2px;
-  color: #C6C2C0 !important;
+  color: #e0e0e0 !important;
   text-decoration: none;
-  text-decoration-color: hsl(0deg, 0%, 41%);
+  text-decoration-color: #666666;
 }
 
 a:hover {
-  color: hsl(16deg, 100%, 50%) !important;
-  text-decoration-color: hsl(16deg, 100%, 50%) !important;
+  color: #999999 !important;
+  text-decoration-color: #999999 !important;
 }
 
 div.sep {
   margin: 20px 0;
-  color: hsl(0deg, 0%, 41%);
+  color: #666666;
   font-weight: bolder;
 }
 
@@ -200,10 +200,20 @@ ul {
 }
 
 ul li {
-  color: hsl(0deg, 0%, 41%);
+  color: #666666;
   list-style: none;
 }
 
 ul li::before {
   content: " + ";
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 21px;
+  }
+
+  div#wrapper {
+    padding: 50px;
+  }
 }
