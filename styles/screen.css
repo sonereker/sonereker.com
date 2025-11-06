@@ -148,6 +148,9 @@ div#container {
     bottom: 0;
     right: 0;
     overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
@@ -178,7 +181,10 @@ div.title a:hover {
 }
 
 div#wrapper {
-    padding: 20px;
+    padding: 40px 30px;
+    border: 1px solid #222;
+    max-width: 400px;
+    width: 90%;
 }
 
 a,
@@ -218,6 +224,6 @@ ul li::before {
     }
 
     div#wrapper {
-        padding: 50px;
+        padding: 50px 40px;
     }
 }
