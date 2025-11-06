@@ -136,8 +136,8 @@ body {
     background-color: #0a0a0a;
     color: #e0e0e0 !important;
     font-size: 18px;
-    text-transform: uppercase;
     text-rendering: optimizeLegibility;
+    text-transform: uppercase;
     line-height: 1.7em;
 }
 
@@ -182,8 +182,7 @@ div.title a:hover {
 
 div#wrapper {
     padding: 40px 30px;
-    border: 1px solid #222;
-    max-width: 400px;
+    max-width: 500px;
     width: 90%;
 }
 
@@ -201,12 +200,24 @@ a:hover {
 }
 
 div.sep {
+    width: 100%;
+    display: block;
+    text-align: right;
     margin: 20px 0;
     color: #666666;
 }
 
+.work {
+    width: 100%;
+    display: block;
+    text-align: right;
+}
+
 ul {
+    display: block;
     line-height: 1.7em;
+    padding-left: 200px;
+    margin-top: 60px;
 }
 
 ul li {
