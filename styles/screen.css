@@ -81,11 +81,11 @@ time,
 mark,
 audio,
 video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -99,121 +99,125 @@ header,
 menu,
 nav,
 section {
-  display: block;
+    display: block;
 }
 
 body {
-  line-height: 1;
+    line-height: 1;
 }
 
 ol,
 ul {
-  list-style: none;
+    list-style: none;
 }
 
 blockquote,
 q {
-  quotes: none;
+    quotes: none;
 }
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
-  content: none;
+    content: "";
+    content: none;
 }
 
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 /* Main
 --------------------------------------------- */
 body {
-  font-family: "MonaspaceNeon", sans-serif;
-  background-color: #0a0a0a;
-  color: #e0e0e0 !important;
-  font-size: 18px;
-  font-weight: 300;
-  text-transform: uppercase;
-  text-rendering: optimizeLegibility;
-  line-height: 1.7em;
+    font-family: "basier_square_monoregular", sans-serif;
+    background-color: #0a0a0a;
+    color: #e0e0e0 !important;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-rendering: optimizeLegibility;
+    line-height: 1.7em;
 }
 
 div#container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  overflow: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
 }
 
 h1 {
-  padding-bottom: 0;
-  font-weight: 300;
+    padding-bottom: 0;
+    font-weight: 400;
 }
 
 div.title a:hover {
-  color: #999999 !important;
+    color: #999999 !important;
 }
 
 .blink-box {
-  display: inline-block;
-  color: #999999 !important;
-  animation: blink 1s infinite;
+    display: inline-block;
+    color: #999999 !important;
+    animation: blink 1s infinite;
 }
 
 @keyframes blink {
-  0% { opacity: 1; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 div#wrapper {
-  padding: 20px;
+    padding: 20px;
 }
 
 a,
 a:visited {
-  padding-top: 2px;
-  color: #e0e0e0 !important;
-  text-decoration: none;
-  text-decoration-color: #666666;
+    padding-top: 2px;
+    color: #e0e0e0 !important;
+    text-decoration: none;
+    text-decoration-color: #666666;
 }
 
 a:hover {
-  color: #999999 !important;
-  text-decoration-color: #999999 !important;
+    color: #999999 !important;
+    text-decoration-color: #999999 !important;
 }
 
 div.sep {
-  margin: 20px 0;
-  color: #666666;
-  font-weight: bolder;
+    margin: 20px 0;
+    color: #666666;
 }
 
 ul {
-  line-height: 1.7em;
+    line-height: 1.7em;
 }
 
 ul li {
-  color: #666666;
-  list-style: none;
+    color: #666666;
+    list-style: none;
 }
 
 ul li::before {
-  content: " + ";
+    content: " + ";
 }
 
 @media (min-width: 768px) {
-  body {
-    font-size: 21px;
-  }
+    body {
+        font-size: 16px;
+    }
 
-  div#wrapper {
-    padding: 50px;
-  }
+    div#wrapper {
+        padding: 50px;
+    }
 }
