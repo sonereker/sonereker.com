@@ -158,10 +158,6 @@ h1 {
     font-weight: 400;
 }
 
-div.title a:hover {
-    color: #999999 !important;
-}
-
 .blink-box {
     display: inline-block;
     color: #999999 !important;
@@ -213,11 +209,14 @@ div.sep {
     text-align: right;
 }
 
+p {
+    margin: 20px 0;
+}
+
 ul {
     display: block;
     line-height: 1.7em;
-    padding-left: 200px;
-    margin-top: 60px;
+    margin: 20px 0;
 }
 
 ul li {
@@ -227,6 +226,36 @@ ul li {
 
 ul li::before {
     content: " + ";
+}
+
+footer.legal {
+    width: 100%;
+    display: block;
+    text-align: right;
+    margin-top: 40px;
+    color: #666666;
+}
+
+footer.legal .pipe {
+    color: #666666;
+}
+
+.prose h2 {
+    margin-top: 30px;
+}
+
+a.back {
+    display: inline-block;
+    margin-bottom: 30px;
+    color: #666666 !important;
+}
+
+body.page div#container {
+    align-items: flex-start;
+}
+
+body.page div#wrapper {
+    max-width: 640px;
 }
 
 @media (min-width: 768px) {

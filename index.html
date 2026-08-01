@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8"/>
     <title>Soner Eker</title>
-    <meta name="description" content="Web playground of Soner Eker"/>
-    <meta name="author" content="Personal homepage of Soner Eker, Software Developer"/>
+    <meta name="description" content="Soner Eker — an independent software studio based in Istanbul, Türkiye."/>
+    <meta name="author" content="Soner Eker"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" media="screen, projection" href="fonts/basier/stylesheet.css"/>
     <link rel="stylesheet" media="screen, projection" href="styles/screen.css"/>
@@ -12,25 +12,42 @@
 <body>
 <div id="container">
     <div id="wrapper">
-        <h1>Soner Eker</h1>
-        <div class="title">
-            Software Engineer<span class="blink-box">&#9614;</span>
-        </div>
+        <h1>Soner Eker<span class="blink-box">&#9614;</span></h1>
         <div class="sep">&mdash;</div>
 
-        <a class="work" href="https://surfe.com">@Surfe</a>
+        <p>
+            We are an independent software studio based in Istanbul, TÜRKİYE.
+            We build focused, well-crafted apps and tools.
+        </p>
 
-        <div class="work">
-            Building <a href="https://plumi.app">Plumi</a>, <a href="https://progresscue.com">ProgressCue</a>
-        </div>
+        <p>We're currently building:</p>
 
-        <div class="sep">&mdash;</div>
-        <ul class="elsewhere">
-            <li><a href="https://github.com/sonereker">GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/sonereker">LinkedIn</a></li>
-            <li><a href="https://www.instagram.com/sonereker">Instagram</a></li>
+        <ul class="products">
+            <li><a href="https://plumi.app">Plumi</a> &mdash; a private, easy baby-tracking app.</li>
+            <li><a href="https://progresscue.com">ProgressCue</a> &mdash; engineering insights and delivery analytics for software teams.</li>
         </ul>
+
+        <p>
+            Feel free to reach us at <a class="email" href="#"></a><noscript>hello [at] sonereker [dot] com</noscript>
+            with feedback and ideas.
+        </p>
+
+        <div class="sep">&mdash;</div>
+
+        <footer class="legal">
+            <a href="privacy.html">Privacy Policy</a> <span class="pipe">|</span> <a href="terms.html">Terms of Use</a>
+        </footer>
     </div>
 </div>
+<script>
+    (function () {
+        var addr = ["hello", "sonereker.com"].join("@");
+        var links = document.querySelectorAll("a.email");
+        for (var i = 0; i < links.length; i++) {
+            links[i].href = "mailto:" + addr;
+            links[i].textContent = addr;
+        }
+    })();
+</script>
 </body>
 </html>
