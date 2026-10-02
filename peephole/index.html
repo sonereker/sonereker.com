@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Peephole</title>
+    <meta name="description" content="Peephole shows your IP camera live from the Mac menu bar. Any RTSP camera, H.264 or H.265. No account, no cloud."/>
+    <meta name="author" content="Soner Eker"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta property="og:title" content="Peephole"/>
+    <meta property="og:description" content="Your IP camera, one click away in the Mac menu bar."/>
+    <meta property="og:image" content="https://sonereker.com/peephole/screenshot.jpg"/>
+    <link rel="icon" href="icon.png"/>
+    <link rel="apple-touch-icon" href="icon.png"/>
+    <link rel="stylesheet" href="/fonts/basier/stylesheet.css"/>
+    <link rel="stylesheet" href="/styles/screen.css"/>
+    <style>
+        .app {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 10px;
+        }
+
+        .app img {
+            width: 72px;
+            height: 72px;
+        }
+
+        .app h1 {
+            line-height: 1.2em;
+        }
+
+        .tagline {
+            color: #999999;
+        }
+
+        a.store {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 16px;
+            border: 1px solid #444444;
+            border-radius: 8px;
+        }
+
+        a.store:hover {
+            border-color: #999999;
+        }
+
+        .shot {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin: 30px 0 10px;
+            border: 1px solid #222222;
+            border-radius: 10px;
+        }
+
+        .caption {
+            margin-top: 0;
+            color: #666666;
+            font-size: 0.85em;
+            text-align: right;
+        }
+
+        .prose ol {
+            margin: 20px 0;
+            counter-reset: step;
+        }
+
+        .prose ol li {
+            counter-increment: step;
+            color: #666666;
+        }
+
+        .prose ol li::before {
+            content: counter(step) ". ";
+        }
+    </style>
+</head>
+<body class="page">
+<div id="container"><div id="wrapper">
+    <a class="back" href="/">&larr; Soner Eker</a>
+
+    <div class="app">
+        <img src="icon.png" alt="Peephole app icon"/>
+        <h1>Peephole<span class="blink-box">&#9614;</span></h1>
+    </div>
+    <p class="tagline">Your IP camera, one click away in the Mac menu bar.</p>
+    <a class="store" href="https://apps.apple.com/app/id6818576075">Download on the Mac App Store &rarr;</a>
+
+    <img class="shot" src="screenshot.jpg" width="960" height="540"
+         alt="Peephole's live camera view opened from the Mac menu bar"/>
+    <p class="caption">macOS 14 or later</p>
+
+    <ul class="products">
+        <li>Live view, right from the menu bar</li>
+        <li>Any RTSP camera, H.264 or H.265</li>
+        <li>Several cameras, one click to switch</li>
+        <li>Streams only while the view is open</li>
+        <li>No account, no cloud, no tracking</li>
+    </ul>
+
+    <div class="sep">&mdash;</div>
+
+    <div class="prose">
+        <h2>Add a camera</h2>
+        <ol>
+            <li>Click the camera icon in the menu bar. Peephole has no Dock icon.</li>
+            <li>Choose Add Camera, give the camera a name, and enter its RTSP stream URL. Find the address in your camera's manual or settings.</li>
+            <li>Enter the camera's username and password if required. Use Test to check the connection, then save.</li>
+        </ol>
+
+        <h2>Watch and switch cameras</h2>
+        <p>Click the menu bar icon to watch. Move the pointer over the video to reveal the camera switcher and settings. Closing the view stops streaming. You can save several cameras and choose which one to view.</p>
+
+        <h2>If a stream does not connect</h2>
+        <ul>
+            <li>Confirm that RTSP is enabled on the camera and its video codec is H.264 or H.265.</li>
+            <li>Check the address, port, stream path and camera credentials.</li>
+            <li>Make sure your Mac can reach the camera, usually on the same network. Permit local network access if macOS asks.</li>
+            <li>If another viewer is connected, close it and try again. Some cameras limit simultaneous streams.</li>
+        </ul>
+        <p>Peephole supports Basic and Digest authentication. It does not support audio playback, recording, pan, tilt or zoom controls, or cameras that provide only MJPEG or HTTP video.</p>
+
+        <h2>Privacy</h2>
+        <p>Peephole connects directly to the cameras you add. It has no account, cloud service, analytics or tracking. Passwords are kept in the macOS Keychain. Read the <a href="privacy.html">Peephole Privacy Policy</a>.</p>
+
+        <h2>Contact</h2>
+        <p>For help or feedback, email <a href="mailto:soner@sonereker.com">soner@sonereker.com</a>. Include your macOS version, camera model and any error message. Please do not send camera passwords or stream URLs containing credentials.</p>
+    </div>
+
+    <div class="sep">&mdash;</div>
+
+    <footer class="legal">
+        <a href="privacy.html">Privacy Policy</a> <span class="pipe">|</span> <a href="mailto:soner@sonereker.com">Contact</a>
+    </footer>
+</div></div>
+</body>
+</html>
