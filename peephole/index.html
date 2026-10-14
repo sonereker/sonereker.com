@@ -5,135 +5,105 @@
     <title>Peephole</title>
     <meta name="description" content="Peephole shows your IP camera live from the Mac menu bar. Any RTSP camera, H.264 or H.265. No account, no cloud."/>
     <meta name="author" content="Soner Eker"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
     <meta property="og:title" content="Peephole"/>
     <meta property="og:description" content="Your IP camera, one click away in the Mac menu bar."/>
     <meta property="og:image" content="https://sonereker.com/peephole/screenshot.jpg"/>
     <link rel="icon" href="icon.png"/>
     <link rel="apple-touch-icon" href="icon.png"/>
-    <link rel="stylesheet" href="/fonts/basier/stylesheet.css"/>
-    <link rel="stylesheet" href="/styles/screen.css"/>
-    <style>
-        .app {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            margin-bottom: 10px;
-        }
-
-        .app img {
-            width: 72px;
-            height: 72px;
-        }
-
-        .app h1 {
-            line-height: 1.2em;
-        }
-
-        .tagline {
-            color: #999999;
-        }
-
-        a.store {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 16px;
-            border: 1px solid #444444;
-            border-radius: 8px;
-        }
-
-        a.store:hover {
-            border-color: #999999;
-        }
-
-        .shot {
-            display: block;
-            width: 100%;
-            height: auto;
-            margin: 30px 0 10px;
-            border: 1px solid #222222;
-            border-radius: 10px;
-        }
-
-        .caption {
-            margin-top: 0;
-            color: #666666;
-            font-size: 0.85em;
-            text-align: right;
-        }
-
-        .prose ol {
-            margin: 20px 0;
-            counter-reset: step;
-        }
-
-        .prose ol li {
-            counter-increment: step;
-            color: #666666;
-        }
-
-        .prose ol li::before {
-            content: counter(step) ". ";
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&display=swap"/>
+    <link rel="stylesheet" href="/styles/site.css"/>
 </head>
-<body class="page">
-<div id="container"><div id="wrapper">
-    <a class="back" href="/">&larr; Soner Eker</a>
+<body>
+<!-- Lucide icons (ISC license) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></symbol>
+    <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
+    <symbol id="i-laptop" viewBox="0 0 24 24"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/></symbol>
+    <symbol id="i-shield-check" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+</svg>
 
-    <div class="app">
-        <img src="icon.png" alt="Peephole app icon"/>
-        <h1>Peephole<span class="blink-box">&#9614;</span></h1>
-    </div>
-    <p class="tagline">Your IP camera, one click away in the Mac menu bar.</p>
-    <a class="store" href="https://apps.apple.com/app/id6818576075">Download on the Mac App Store &rarr;</a>
+<main class="page">
+    <a class="back label" href="/">
+        <svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg>Soner Eker
+    </a>
 
-    <img class="shot" src="screenshot.jpg" width="1440" height="900"
-         alt="Peephole's live camera view opened from the Mac menu bar"/>
-    <p class="caption">macOS 14 or later</p>
+    <header>
+        <img class="app-icon" src="icon.png" width="64" height="64" alt="Peephole app icon"/>
+        <h1 class="intro">Peephole. <span class="soft">Your IP camera, one click away in the Mac menu bar.</span></h1>
+        <div class="meta">
+            <span><svg class="icon" aria-hidden="true"><use href="#i-laptop"/></svg>macOS 14 or later</span>
+            <span><svg class="icon" aria-hidden="true"><use href="#i-shield-check"/></svg>No account, no cloud</span>
+        </div>
+        <div class="pills">
+            <a class="pill trailing primary" href="https://apps.apple.com/app/id6818576075">
+                Download on the Mac App Store
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+            </a>
+        </div>
+    </header>
 
-    <ul class="products">
-        <li>Live view, right from the menu bar</li>
-        <li>Any RTSP camera, H.264 or H.265</li>
-        <li>Several cameras, one click to switch</li>
-        <li>Streams only while the view is open</li>
-        <li>No account, no cloud, no tracking</li>
-    </ul>
+    <figure>
+        <img class="shot" src="screenshot.jpg" width="1440" height="900" alt="Peephole's live camera view opened from the Mac menu bar"/>
+    </figure>
 
-    <div class="sep">&mdash;</div>
+    <section aria-labelledby="features">
+        <h2 id="features">Features</h2>
+        <ul class="checks">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Live view, right from the menu bar</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Any RTSP camera, H.264 or H.265</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Several cameras, one click to switch</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Streams only while the view is open</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>No account, no cloud, no tracking</li>
+        </ul>
+    </section>
 
-    <div class="prose">
-        <h2>Add a camera</h2>
-        <ol>
-            <li>Click the camera icon in the menu bar. Peephole has no Dock icon.</li>
-            <li>Choose Add Camera, give the camera a name, and enter its RTSP stream URL. Find the address in your camera's manual or settings.</li>
-            <li>Enter the camera's username and password if required. Use Test to check the connection, then save.</li>
+    <section aria-labelledby="add-camera">
+        <h2 id="add-camera">Add a camera</h2>
+        <ol class="steps">
+            <li><span>Click the camera icon in the menu bar. Peephole has no Dock icon.</span></li>
+            <li><span>Choose Add Camera, give the camera a name, and enter its RTSP stream URL. Find the address in your camera's manual or settings.</span></li>
+            <li><span>Enter the camera's username and password if required. Use Test to check the connection, then save.</span></li>
         </ol>
+    </section>
 
-        <h2>Watch and switch cameras</h2>
+    <section aria-labelledby="watch">
+        <h2 id="watch">Watch and switch cameras</h2>
         <p>Click the menu bar icon to watch. Move the pointer over the video to reveal the camera switcher and settings. Closing the view stops streaming. You can save several cameras and choose which one to view.</p>
+    </section>
 
-        <h2>If a stream does not connect</h2>
-        <ul>
-            <li>Confirm that RTSP is enabled on the camera and its video codec is H.264 or H.265.</li>
-            <li>Check the address, port, stream path and camera credentials.</li>
-            <li>Make sure your Mac can reach the camera, usually on the same network. Permit local network access if macOS asks.</li>
-            <li>If another viewer is connected, close it and try again. Some cameras limit simultaneous streams.</li>
+    <section aria-labelledby="troubleshoot">
+        <h2 id="troubleshoot">If a stream does not connect</h2>
+        <ul class="bullets">
+            <li><span>Confirm that RTSP is enabled on the camera and its video codec is H.264 or H.265.</span></li>
+            <li><span>Check the address, port, stream path and camera credentials.</span></li>
+            <li><span>Make sure your Mac can reach the camera, usually on the same network. Permit local network access if macOS asks.</span></li>
+            <li><span>If another viewer is connected, close it and try again. Some cameras limit simultaneous streams.</span></li>
         </ul>
         <p>Peephole supports Basic and Digest authentication. It does not support audio playback, recording, pan, tilt or zoom controls, or cameras that provide only MJPEG or HTTP video.</p>
+    </section>
 
-        <h2>Privacy</h2>
+    <section aria-labelledby="privacy">
+        <h2 id="privacy">Privacy</h2>
         <p>Peephole connects directly to the cameras you add. It has no account, cloud service, analytics or tracking. Passwords are kept in the macOS Keychain. Read the <a href="privacy.html">Peephole Privacy Policy</a>.</p>
+    </section>
 
-        <h2>Contact</h2>
-        <p>For help or feedback, email <a href="mailto:soner@sonereker.com">soner@sonereker.com</a>. Include your macOS version, camera model and any error message. Please do not send camera passwords or stream URLs containing credentials.</p>
-    </div>
+    <section aria-labelledby="contact">
+        <h2 id="contact">Contact</h2>
+        <p>For help or feedback, email me. Include your macOS version, camera model and any error message. Please do not send camera passwords or stream URLs containing credentials.</p>
+        <div class="pills">
+            <button type="button" class="pill" id="copy-email" aria-label="Copy email address">
+                <svg class="icon" aria-hidden="true"><use id="copy-icon" href="#i-copy"/></svg>
+                <span id="copy-label">hello [at] sonereker [dot] com</span>
+            </button>
+        </div>
+    </section>
+</main>
 
-    <div class="sep">&mdash;</div>
-
-    <footer class="legal">
-        <a href="privacy.html">Privacy Policy</a> <span class="pipe">|</span> <a href="mailto:soner@sonereker.com">Contact</a>
-    </footer>
-</div></div>
+<script src="/scripts/site.js"></script>
 </body>
 </html>
